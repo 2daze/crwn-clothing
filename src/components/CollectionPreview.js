@@ -1,6 +1,7 @@
 import React from 'react';
-import './CollectionPreview.styles.scss';
 import CollectionItem from './CollectionItem';
+
+import './CollectionPreview.styles.scss';
 
 const PreviewCollection = ({ title, items }) => {
   const previewItems = () => {
