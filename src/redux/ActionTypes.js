@@ -9,3 +9,6 @@ export const CartActionTypes = {
   REMOVE_ITEM: 'REMOVE_ITEM'
 };
 
+export const ShopActionTypes = {
+  UPDATE_COLLECTIONS: 'UPDATE_COLLECTIONS'
+};

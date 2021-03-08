@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { clearItemFromCart, addItem, removeItem } from '../redux/CartActions';
-import StringCheckoutButton from './StripeButton';
 
 import './CheckoutItem.styles.scss';
 
