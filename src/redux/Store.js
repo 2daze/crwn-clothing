@@ -3,11 +3,16 @@ import logger from 'redux-logger';
 import rootReducer from './RootReducer';
 import { persistStore } from 'redux-persist';
 
-const middleware = [logger];
+const middleware = [];
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-export const store = createStore(rootReducer, composeEnhancers( applyMiddleware(...middleware)));
-export const persistor = persistStore(store);
+let initStore = createStore(rootReducer,applyMiddleware(...middleware));
 
-const stores = { store, persistor };
-export default stores;
+if (process.env.NODE_ENV === 'development') {
+  middleware.push(logger);
+  initStore = createStore(rootReducer, composeEnhancers(applyMiddleware(...middleware)));
+}
+
+export const store = initStore;
+export const persistor = persistStore(store);
+export const stores = { store, persistor };
 
