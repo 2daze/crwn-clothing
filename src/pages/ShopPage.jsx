@@ -14,7 +14,7 @@ class ShopPage extends React.Component {
   state = { loading: true };
   unsubscribeFromSnapshot = null; 
 
-  componentDidMount() {
+  componentDidMountUsingObservable() {
     const collectionRef = firestore.collection('collections');
     collectionRef.onSnapshot(async snapshot => {
       const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
@@ -23,6 +23,25 @@ class ShopPage extends React.Component {
     });
   }
   
+  componentDidMount() {
+    const collectionRef = firestore.collection('collections');
+    collectionRef.get().then(snapshot => {
+      const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
+      this.props.updateCollections(collectionsMap);
+      this.setState({loading: false});
+    });
+  }
+
+  componentDidMountUsingFetch() {
+    const baseUrl = "https://firestore.googleapis.com/v1/projects/crwn-backend-db/"
+    const databaseBaseUri = "databases/(default)/documents/"
+    const resource = "collections"
+
+    fetch(`${baseUrl}${databaseBaseUri}${resource}`)
+      .then(response => response.json())
+      .then(collections => console.log(collections));
+  }
+
   render () {
     const { match } = this.props;
     const { loading } = this.props;
