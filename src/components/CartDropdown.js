@@ -6,6 +6,7 @@ import CustomButton from './CustomButton';
 import CartItem from './CartItem';
 import { selectCartItems } from '../redux/CartSelectors';
 import { toggleCartHidden } from '../redux/CartActions';
+import { CustomButtonContainer } from './CustomButton.styles';
 
 import './CartDropdown.styles.scss';
 
@@ -29,7 +30,9 @@ const CartDropdown = ({cartItems, history, dispatch}) => {
   return (
     <div className="cart-dropdown scroll-hide">
       <div className="cart-items">{mapCartItems()}</div>
-    <CustomButton onClick={handleButtonClick}>GO TO CHECKOUT</CustomButton>
+    <CustomButtonContainer onClick={handleButtonClick}>
+      GO TO CHECKOUT
+    </CustomButtonContainer>
     </div>
   );
 }
