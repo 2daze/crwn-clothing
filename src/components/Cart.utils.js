@@ -1,3 +1,5 @@
+export const publishableKey = "pk_test_51ISVKtKsBWm4KGv3cxBeOc5FBWcAPgxSYpRzAP5iCmDBIm6g8YAjpNpP8nmFXJcY9mMx73F9LlMJP1Zb7SZ0SKfk00q1GtftxN"
+
 export const addItemToCart = (cartItems, cartItemToAdd) => {
   const existingCartItem = 
     cartItems.find(cartItem => cartItem.id === cartItemToAdd.id);

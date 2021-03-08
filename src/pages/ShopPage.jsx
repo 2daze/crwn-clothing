@@ -1,8 +1,5 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { createStructuredSelector } from 'reselect';
-import { connect } from 'react-redux';
-import { selectCollections } from '../redux/ShopSelectors'; 
 import CollectionOverview from '../components/CollectionOverview';
 import CollectionPage from '../pages/CollectionPage';
 
