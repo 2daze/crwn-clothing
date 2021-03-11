@@ -30,6 +30,16 @@
       background-color: #357ae8;
       border: 1px solid #357ae8;
     }
+
+    &:focus  {
+      background-color: #4285f4;
+      outline: none !important;
+    }
+
+    &:active  {
+      background-color: #4285f4;
+      outline: none !important;
+    }
   }
 
   &.inverted {

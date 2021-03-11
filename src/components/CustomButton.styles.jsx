@@ -38,6 +38,16 @@ export const googleSignInStyles = css`
   &:hover {
     background-color: #357ae8;
   }
+
+  &:focus  {
+    background-color: #357ae8;
+    outline: none !important;
+  }
+
+  &:active  {
+    background-color: #357ae8;
+    outline: none !important;
+  }
 `;
 
 export const CustomButtonContainer = styled.button`
