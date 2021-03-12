@@ -106,7 +106,7 @@ export function* onGoogleSignInStart() {
 
 export function* onEmailSignInStart() {
   yield takeLatest(
-    UserActionTypes.GOOGLE_SIGN_IN_START, 
+    UserActionTypes.EMAIL_SIGN_IN_START, 
     signInWithEmailAndPassword
   );
 }
